@@ -5,15 +5,21 @@ import Homepage from "./pages/Homepage";
 import Notfound from "./pages/Notfound";
 import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
+import CityList from "./components/CityList";
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route index element={<Homepage />} />
           <Route path="product" element={<Product />} />
           <Route path="pricing" element={<Pricing />} />
-          <Route path="app" element={<AppLayout />} />
+          <Route path="app" element={<AppLayout />}>
+            <Route index element={<CityList />} />
+            <Route path="cities" element={<CityList />} />
+            <Route path="countries" element={<p>List of countries</p>} />
+            <Route path="form" element={<p>Form</p>} />
+          </Route>
           <Route path="*" element={<Notfound />} />
           <Route path="login" element={<Login />} />
         </Routes>

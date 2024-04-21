@@ -43,6 +43,7 @@ const App = () => {
               path="cities"
               element={<CityList cities={cities} loading={loading} />}
             />
+
             <Route
               path="countries"
               element={<CountryList cities={cities} loading={loading} />}
